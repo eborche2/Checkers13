@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_52pbMPrlEeWolbMxsR5EUQ" name="model">
+  <eAnnotations xmi:id="_52pbMfrlEeWolbMxsR5EUQ" source="genmymodel">
+    <details xmi:id="_52pbMvrlEeWolbMxsR5EUQ" key="uuid" value="_pkzPQPrjEeWolbMxsR5EUQ"/>
+    <details xmi:id="_52pbM_rlEeWolbMxsR5EUQ" key="author" value="williamwen"/>
+  </eAnnotations>
+  <packageImport xmi:id="_52pbNPrlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbNfrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbNvrlEeWolbMxsR5EUQ" key="uuid" value="_pkz2UPrjEeWolbMxsR5EUQ"/>
+    </eAnnotations>
+    <importedPackage href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#/"/>
+  </packageImport>
+  <packageImport xmi:id="_52pbN_rlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbOPrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbOfrlEeWolbMxsR5EUQ" key="uuid" value="_pk0dYPrjEeWolbMxsR5EUQ"/>
+    </eAnnotations>
+    <importedPackage href="pathmap://GENMYMODEL_LIBRARIES/GenMyModelPrimitiveTypes.library.uml#/"/>
+  </packageImport>
+  <packagedElement xsi:type="uml:Actor" xmi:id="_52pbOvrlEeWolbMxsR5EUQ" name="Player 1">
+    <eAnnotations xmi:id="_52pbO_rlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbPPrlEeWolbMxsR5EUQ" key="uuid" value="_-JiA0N0REDOghNnhXBx0JA"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" xmi:id="_52pbPfrlEeWolbMxsR5EUQ" name="Checkers Game">
+    <eAnnotations xmi:id="_52pbPvrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbP_rlEeWolbMxsR5EUQ" key="uuid" value="_BadwoN0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+    <ownedUseCase xmi:id="_52pbQPrlEeWolbMxsR5EUQ" name="Initiate New Game">
+      <eAnnotations xmi:id="_52pbQfrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbQvrlEeWolbMxsR5EUQ" key="uuid" value="_Hi35UN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+    </ownedUseCase>
+    <ownedUseCase xmi:id="_52pbQ_rlEeWolbMxsR5EUQ" name="Play Checkers">
+      <eAnnotations xmi:id="_52pbRPrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbRfrlEeWolbMxsR5EUQ" key="uuid" value="_OROnsN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+    </ownedUseCase>
+    <ownedUseCase xmi:id="_52pbRvrlEeWolbMxsR5EUQ" name="Read Help File">
+      <eAnnotations xmi:id="_52pbR_rlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbSPrlEeWolbMxsR5EUQ" key="uuid" value="_VJaAcN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="_52pbSfrlEeWolbMxsR5EUQ" name="Player 1_Start New 1 Player Game" memberEnd="_52pbTPrlEeWolbMxsR5EUQ _52pbUfrlEeWolbMxsR5EUQ" navigableOwnedEnd="_52pbTPrlEeWolbMxsR5EUQ _52pbUfrlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbSvrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbS_rlEeWolbMxsR5EUQ" key="uuid" value="_LzrAIN0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+    <ownedEnd xmi:id="_52pbTPrlEeWolbMxsR5EUQ" name="start New 1 Player Game" type="_52pbQPrlEeWolbMxsR5EUQ" association="_52pbSfrlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbTfrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbTvrlEeWolbMxsR5EUQ" key="uuid" value="_Lzk5gN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbT_rlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbUPrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_52pbUfrlEeWolbMxsR5EUQ" name="player 1" type="_52pbOvrlEeWolbMxsR5EUQ" association="_52pbSfrlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbUvrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbU_rlEeWolbMxsR5EUQ" key="uuid" value="_LzpK8N0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbVPrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbVfrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" xmi:id="_52pbVvrlEeWolbMxsR5EUQ" name="System Player">
+    <eAnnotations xmi:id="_52pbV_rlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbWPrlEeWolbMxsR5EUQ" key="uuid" value="_MmTW8N0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="_52pbWfrlEeWolbMxsR5EUQ" name="System Player_Player Game" memberEnd="_52pbXPrlEeWolbMxsR5EUQ _52pbYfrlEeWolbMxsR5EUQ" navigableOwnedEnd="_52pbXPrlEeWolbMxsR5EUQ _52pbYfrlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbWvrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbW_rlEeWolbMxsR5EUQ" key="uuid" value="_QUhVIN0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+    <ownedEnd xmi:id="_52pbXPrlEeWolbMxsR5EUQ" name="player Game" type="_52pbQ_rlEeWolbMxsR5EUQ" association="_52pbWfrlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbXfrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbXvrlEeWolbMxsR5EUQ" key="uuid" value="_QUff8N0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbX_rlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbYPrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_52pbYfrlEeWolbMxsR5EUQ" name="system Player" type="_52pbVvrlEeWolbMxsR5EUQ" association="_52pbWfrlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbYvrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbY_rlEeWolbMxsR5EUQ" key="uuid" value="_QUguEN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbZPrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbZfrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="_52pbZvrlEeWolbMxsR5EUQ" name="Player 1_Player Game" memberEnd="_52pbafrlEeWolbMxsR5EUQ _52pbbvrlEeWolbMxsR5EUQ" navigableOwnedEnd="_52pbafrlEeWolbMxsR5EUQ _52pbbvrlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbZ_rlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbaPrlEeWolbMxsR5EUQ" key="uuid" value="_Q60gIN0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+    <ownedEnd xmi:id="_52pbafrlEeWolbMxsR5EUQ" name="player Game" type="_52pbQ_rlEeWolbMxsR5EUQ" association="_52pbZvrlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbavrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pba_rlEeWolbMxsR5EUQ" key="uuid" value="_Q6yq8N0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbbPrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbbfrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_52pbbvrlEeWolbMxsR5EUQ" name="player 1" type="_52pbOvrlEeWolbMxsR5EUQ" association="_52pbZvrlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbb_rlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbcPrlEeWolbMxsR5EUQ" key="uuid" value="_Q6z5EN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbcfrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbcvrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="_52pbc_rlEeWolbMxsR5EUQ" name="Player 1_Read Help File" memberEnd="_52pbdvrlEeWolbMxsR5EUQ _52pbe_rlEeWolbMxsR5EUQ" navigableOwnedEnd="_52pbdvrlEeWolbMxsR5EUQ _52pbe_rlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbdPrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbdfrlEeWolbMxsR5EUQ" key="uuid" value="_Xigl0N0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+    <ownedEnd xmi:id="_52pbdvrlEeWolbMxsR5EUQ" name="read Help File" type="_52pbRvrlEeWolbMxsR5EUQ" association="_52pbc_rlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbd_rlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbePrlEeWolbMxsR5EUQ" key="uuid" value="_XieJkN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbefrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbevrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_52pbe_rlEeWolbMxsR5EUQ" name="player 1" type="_52pbOvrlEeWolbMxsR5EUQ" association="_52pbc_rlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbfPrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbffrlEeWolbMxsR5EUQ" key="uuid" value="_Xif-wN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbfvrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbf_rlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" xmi:id="_52pbgPrlEeWolbMxsR5EUQ" name="Player 2">
+    <eAnnotations xmi:id="_52pbgfrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbgvrlEeWolbMxsR5EUQ" key="uuid" value="_lVJ2UN0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" xmi:id="_52pbg_rlEeWolbMxsR5EUQ" name="Player 2_Play Checkers" memberEnd="_52pbhvrlEeWolbMxsR5EUQ _52pbi_rlEeWolbMxsR5EUQ" navigableOwnedEnd="_52pbhvrlEeWolbMxsR5EUQ _52pbi_rlEeWolbMxsR5EUQ">
+    <eAnnotations xmi:id="_52pbhPrlEeWolbMxsR5EUQ" source="genmymodel">
+      <details xmi:id="_52pbhfrlEeWolbMxsR5EUQ" key="uuid" value="_nDPIwN0TEDOghNnhXBx0JA"/>
+    </eAnnotations>
+    <ownedEnd xmi:id="_52pbhvrlEeWolbMxsR5EUQ" name="play Checkers" type="_52pbQ_rlEeWolbMxsR5EUQ" association="_52pbg_rlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbh_rlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbiPrlEeWolbMxsR5EUQ" key="uuid" value="_nDK3UN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbifrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbivrlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_52pbi_rlEeWolbMxsR5EUQ" name="player 2" type="_52pbgPrlEeWolbMxsR5EUQ" association="_52pbg_rlEeWolbMxsR5EUQ">
+      <eAnnotations xmi:id="_52pbjPrlEeWolbMxsR5EUQ" source="genmymodel">
+        <details xmi:id="_52pbjfrlEeWolbMxsR5EUQ" key="uuid" value="_nDNTkN0TEDOghNnhXBx0JA"/>
+      </eAnnotations>
+      <lowerValue xsi:type="uml:LiteralInteger" xmi:id="_52pbjvrlEeWolbMxsR5EUQ"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" xmi:id="_52pbj_rlEeWolbMxsR5EUQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
