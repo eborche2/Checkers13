@@ -8,7 +8,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     Graphics g;
 
-    JTextArea msg=new JTextArea("Start a new game... Blue is to move first...");
+    JTextArea msg=new JTextArea("Start a new game... Yellow is to move first...");
     ImageIcon redN=new ImageIcon(new ImageIcon(getClass().getResource("/red_normal.jpg")).getImage());//red_normal.jpg
     ImageIcon yellowN=new ImageIcon(new ImageIcon(getClass().getResource("/yellow_normal.jpg")).getImage());//yellow_normal.jpg
     ImageIcon redK=new ImageIcon(new ImageIcon(getClass().getResource("/red_king.jpg")).getImage());//red_king.jpg
@@ -21,6 +21,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     JButton unB=new JButton("Undo");
     JButton hlpB=new JButton(hlp);
     JButton snB=new JButton(snp);
+    JButton forfeit = new JButton("Forfeit");
 
     ButtonGroup players = new ButtonGroup();
     JRadioButton p1 = new JRadioButton("1-Player", true);
@@ -33,7 +34,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     Help hp=new Help();
 
     JLabel mode=new JLabel("Mode");
-    JLabel col=new JLabel("Colour");
+    JLabel col=new JLabel("Color");
     JLabel diff=new JLabel("Difficulty Level");
     JLabel rp=new JLabel();
     JLabel rpt=new JLabel("Your Piece");
@@ -111,6 +112,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         hlpB.setFont(new Font("SansSerif",Font.PLAIN,11));
         snB.setFont(new Font("SansSerif",Font.PLAIN,11));
         msg.setFont(new Font("SansSerif",Font.PLAIN,11)); 
+        forfeit.setFont(new Font("SansSerif",Font.PLAIN,11));
 
         nwB.setCursor(new Cursor(Cursor.HAND_CURSOR));
         unB.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -120,10 +122,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         unB.addActionListener(this);
         hlpB.addActionListener(this);
         snB.addActionListener(this);
+        forfeit.addActionListener(this);
         nwB.setBounds(405,70,95,25);//297
         this.add(nwB);
         unB.setBounds(405,100,95,25);
         //this.add(unB);
+        forfeit.setBounds(405,100,95,25);
         hlpB.setBounds(415,10,25,25);
         this.add(hlpB);
         snB.setBounds(460,10,25,25);
@@ -142,18 +146,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.add(p1);
         this.add(p2);
 
-        col.setBounds(110,400,80,25);
-        //this.add(col);
+        col.setBounds(415,350,80,25);
+        this.add(col);
         c1.addActionListener(this);
         c2.addActionListener(this);
         c1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         c2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         colors.add(c1);
         colors.add(c2);
-        c1.setBounds(90,440,80,25);
-        c2.setBounds(90,420,80,25);
-        //this.add(c1);
-        //this.add(c2);
+        c1.setBounds(415,373,80,25);
+        c2.setBounds(415,400,80,25);
+        this.add(c1);
+        this.add(c2);
 
         level.setCursor(new Cursor(Cursor.HAND_CURSOR));
         level.addItemListener(this);
@@ -261,10 +265,29 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("sounds/button.wav").start();
+            
+            
+           
             newGame();
+        }
+        if(e.getActionCommand().equalsIgnoreCase("Forfeit")){
+        	loser = toMove;
+        	showStatus();
+        	 this.add(diff);
+             this.add(c1);
+             this.add(c2);
+             this.add(level);
+             this.add(p1);
+             this.add(p2);
+             this.add(mode);
+             this.add(nwB);
+             this.remove(forfeit);
+             this.revalidate();
+             this.repaint();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
             new PlaySound("sounds/button.wav").start();
+           
             undo();
         }
         if(e.getSource()==hlpB){
@@ -339,10 +362,24 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
            this.toMove = redNormal;
             play();
 		}
-
+        this.remove(diff);
+        this.remove(c1);;
+        this.remove(c2);;
+        this.remove(level);
+        this.remove(p1);
+        this.remove(p2);
+        this.remove(mode);
+        this.remove(nwB);
+        this.add(forfeit);
+        this.revalidate();
+        
+       
+        
         update(getGraphics());
         drawCheckers();
         showStatus();
+      
+        
     }
 
     public void drawCheckers(){                   //paint checkers on the board
@@ -548,17 +585,17 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             msg.setText("Red to move");
         }
         else{
-            msg.setText("Blue to move");
+            msg.setText("Yellow to move");
         }
 
         if (loser == redNormal && won==0){
-            msg.setText("Blue Wins!");
+            msg.setText("Yellow Wins!");
             try {
                 Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            new GameWin("Blue",this.getLocationOnScreen());
+            new GameWin("Yellow",this.getLocationOnScreen());
             won=1;
             undoCount=0;
             newGame();
