@@ -125,8 +125,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         forfeit.addActionListener(this);
         nwB.setBounds(405,70,95,25);//297
         this.add(nwB);
-        unB.setBounds(405,100,95,25);
-        //this.add(unB);
+        unB.setBounds(405,130,95,25);
+        this.add(unB);
         forfeit.setBounds(405,100,95,25);
         hlpB.setBounds(415,10,25,25);
         this.add(hlpB);
@@ -598,7 +598,17 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             new GameWin("Yellow",this.getLocationOnScreen());
             won=1;
             undoCount=0;
-            newGame();
+            this.add(diff);
+            this.add(c1);
+            this.add(c2);
+            this.add(level);
+            this.add(p1);
+            this.add(p2);
+            this.add(mode);
+            this.add(nwB);
+            this.remove(forfeit);
+            this.revalidate();
+            this.repaint();
         }
         else if (loser == yellowNormal && won==0){
             msg.setText("Red Wins!");
@@ -610,7 +620,17 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             new GameWin("Red",this.getLocationOnScreen());
             won=1;
             undoCount=0;
-            newGame();            
+            this.add(diff);
+            this.add(c1);
+            this.add(c2);
+            this.add(level);
+            this.add(p1);
+            this.add(p2);
+            this.add(mode);
+            this.add(nwB);
+            this.remove(forfeit);
+            this.revalidate();
+            this.repaint();            
         }
     }
    // The AWT invokes the update() method in response to the repaint() method

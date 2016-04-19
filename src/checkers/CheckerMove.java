@@ -192,6 +192,8 @@ public class CheckerMove {
 						return illegalMove;
 					break;
 				case Checkers.redKing:
+					if (Math.abs(endJ - srtJ) != 2)
+						return illegalMove;
                 case Checkers.yellowKing:
 					if (Math.abs(endJ - srtJ) != 2)
 						return illegalMove;
@@ -221,6 +223,8 @@ public class CheckerMove {
 					if (endJ - srtJ == -1) return legalMove;
                     break;
 				case Checkers.redKing:
+					if ( Math.abs(endJ - srtJ) == 1 ) return legalMove;
+	                break;
                 case Checkers.yellowKing:
                     if ( Math.abs(endJ - srtJ) == 1 ) return legalMove;
                     break;
@@ -361,6 +365,9 @@ public class CheckerMove {
                                 return true;
                         break;
                 case Checkers.redKing:
+                	if ( isEmpty(board,i+1,j+1) || isEmpty(board,i+1,j-1)
+                            || isEmpty(board,i-1,j+1) || isEmpty(board,i-1,j-1) )
+                            return true;
                 case Checkers.yellowKing:
                         if ( isEmpty(board,i+1,j+1) || isEmpty(board,i+1,j-1)
                                 || isEmpty(board,i-1,j+1) || isEmpty(board,i-1,j-1) )

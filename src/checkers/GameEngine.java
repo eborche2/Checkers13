@@ -126,7 +126,7 @@ Weight of checkers
                 int temp[] = new int[4];
                 score= MinMax(newBoard, depth+1, maxDepth, temp, getOpponent(turn), counter, yellowBest, redBest);
 
-                if (turn==Checkers.yellowNormal && score > bestScore) {
+                if (turn==Checkers.yellowNormal && score >= bestScore) {
                     bestMove = (int[])movesList.elementAt(i);
                     bestScore = score;
                     if (bestScore > yellowBest)
@@ -138,7 +138,7 @@ Weight of checkers
                     }
                 }
 
-                else if (turn==Checkers.redNormal && score < bestScore) {
+                else if (turn==Checkers.redNormal && score <= bestScore) {
                     bestMove = (int[])movesList.elementAt(i);
                     bestScore = score;
                     if (bestScore < redBest)
