@@ -443,7 +443,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 		{
 			this.toMove = redNormal;
 			showStatus();
-			tempScore = GameEngine.MinMax(board,0,difficulty+2,result,this.toMove,counter);
+			tempScore = GameEngine.MinMax(board,0,difficulty+1,result,this.toMove,counter);
 
 			if (result[0] == 0 && result[1] == 0)
 				loser = redNormal;
@@ -463,7 +463,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 		{
 			this.toMove = yellowNormal;
 			showStatus();
-			tempScore = GameEngine.MinMax(board,0,difficulty+2,result,this.toMove,counter);
+			tempScore = GameEngine.MinMax(board,0,difficulty+1,result,this.toMove,counter);
 
 			if (result[0] == 0 && result[1] == 0)
 				loser = yellowNormal;
