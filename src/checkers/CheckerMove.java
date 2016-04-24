@@ -67,6 +67,7 @@ public class CheckerMove {
     static int ApplyMove(int[][] board,int srtI,int srtJ,int endI,int endJ)
         {
 		        int result = isMoveLegal(board,srtI,srtJ,endI,endJ,colour(board[srtI][srtJ]));
+		        
                 if (result != illegalMove)
                 {
                         if ( Math.abs(endI - srtI) == 1)
@@ -464,15 +465,41 @@ public class CheckerMove {
     }
 
 //"apply move" in the Minimax.  simply moves the board give moves
+    static int[] moveComputer(int[][] board, int[] move, int x)
+    {
+        int startx = move[0];
+        int starty = move[1];
+        int endx = move[2];
+        int endy = move[3];
+        int[] fmove = move;
+       
+       // while (endx>0 || endy>0)
+        //{
+        	
+        	
+            ApplyMove(board,startx,starty,endx%10,endy%10);
+            startx = endx%10;
+            starty = endy%10;
+            endx /= 10;
+            endy /= 10;
+            fmove[0] = startx;
+            fmove[1] = starty;
+            fmove[2] = endx;
+        	fmove[3] = endy;
+        return(fmove);
+    }
     static void moveComputer(int[][] board, int[] move)
     {
         int startx = move[0];
         int starty = move[1];
         int endx = move[2];
         int endy = move[3];
+        
+       
         while (endx>0 || endy>0)
         {
-
+        	
+        	
             ApplyMove(board,startx,starty,endx%10,endy%10);
             startx = endx%10;
             starty = endy%10;

@@ -56,7 +56,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 	static final int redKing = 3;
 	static final int yellowKing = 4;
 	static final int empty = 0;
-
+	static final int delay = 3;
     int currType;
     boolean movable;
 
@@ -227,6 +227,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         g.drawLine(0,400,400,400);
         g.drawLine(400, 0, 400, 400);
         drawCheckers();
+        
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -397,9 +398,862 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                     g.drawImage(yellowK.getImage(),i*50,j*50,this);
             }
         }
+        
        
     }
+    
+    public void drawCheckers(int piece, int startx, int starty, int endx, int endy)
+    {
+    	long beforeTime, timeDiff, sleep;
+    	
+        beforeTime = System.currentTimeMillis();
+    	if(piece==redNormal)
+    	{
+    	if(startx>endx)
+    	{
+    		if(starty>endy)
+    		{
+    			starty = starty*50;
+    			endy = endy*50;
+    			startx = startx*50;
+    			endx = endx*50;
+    			while(starty!=endy)
+    			{
+    				starty--;
+    			
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
 
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    			while(startx!=endx)
+    			{
+    				
+    				startx--;
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    		}
+    		else
+    		{
+    			starty = starty*50;
+    			endy = endy*50;
+    			startx = startx*50;
+    			endx = endx*50;
+    			while(starty!=endy)
+    			{
+    				starty++;
+    				
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    			while(startx!=endx)
+    			{
+    				
+    				startx--;
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    		}
+    	}
+    	else
+    	{
+    		if(starty>endy)
+    		{
+    			starty = starty*50;
+    			endy = endy*50;
+    			startx = startx*50;
+    			endx = endx*50;
+    			while(starty!=endy)
+    			{
+    				starty--;
+    				
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    			while(startx!=endx)
+    			{
+    				
+    				startx++;
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    		}
+    		else
+    		{
+    			starty = starty*50;
+    			endy = endy*50;
+    			startx = startx*50;
+    			endx = endx*50;
+    			while(starty!=endy)
+    			{
+    				starty++;
+    				
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    			while(startx!=endx)
+    			{
+    				
+    				startx++;
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				//this.repaint();
+
+    	            timeDiff = System.currentTimeMillis() - beforeTime;
+    	            sleep = delay - timeDiff;
+
+    	            if (sleep < 0) {
+    	                sleep = 2;
+    	            }
+
+    	            try {
+    	                Thread.sleep(sleep);
+    	            } catch (InterruptedException e) {
+    	                System.out.println("Interrupted: " + e.getMessage());
+    	            }
+
+    	            beforeTime = System.currentTimeMillis();
+    			}
+    		}
+    		}
+    	}
+    	else if (piece==yellowNormal)
+    		if(startx>endx)
+        	{
+        		if(starty>endy)
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				 starty--;
+        				 
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				 startx--;
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		else
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)		{
+        				starty++;
+        				
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)		{
+        				
+        				startx--;
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        	}
+        	else
+        	{
+        		if(starty>endy)
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty--;
+        				
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx++;
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		else
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty++;
+        				
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx++;
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		}
+    	else if (piece==redKing)
+    		if(startx>endx)
+        	{
+        		if(starty>endy)
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				
+        				starty--;
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx--;
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		else
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty++;
+        				
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx--;
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        	}
+        	else
+        	{
+        		if(starty>endy)
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty--;
+        				
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx++;
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		else
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty++;
+        				
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx++;
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		}
+    	else if (piece==yellowKing)
+    		if(startx>endx)
+        	{
+        		if(starty>endy)
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty--;
+        				
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        			
+        				startx--;
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		else
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty++;
+        				
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx--;
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        	}
+        	else
+        	{
+        		if(starty>endy)
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty--;
+        				
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx++;
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		else
+        		{
+        			starty = starty*50;
+        			endy = endy*50;
+        			startx = startx*50;
+        			endx = endx*50;
+        			while(starty!=endy)
+        			{
+        				starty++;
+        				
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        			while(startx!=endx)
+        			{
+        				
+        				startx++;
+        				g.drawImage(yellowK.getImage(), startx, starty,this);
+        				//this.repaint();
+
+        	            timeDiff = System.currentTimeMillis() - beforeTime;
+        	            sleep = delay - timeDiff;
+
+        	            if (sleep < 0) {
+        	                sleep = 2;
+        	            }
+
+        	            try {
+        	                Thread.sleep(sleep);
+        	            } catch (InterruptedException e) {
+        	                System.out.println("Interrupted: " + e.getMessage());
+        	            }
+
+        	            beforeTime = System.currentTimeMillis();
+        			}
+        		}
+        		}
+    	
+    }
+    
     public void undo(){            //undo function
         undoCount=1;
         for(int i=0;i<8;i++){
@@ -449,8 +1303,23 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				loser = redNormal;
 			else
 			{
-                CheckerMove.moveComputer(board, result);
-
+				int testx = result[2];
+				int testy = result[3];
+				int cc = 1;
+		        while(testx>9||testy>9)
+		        {
+		        	cc++;
+		        	testx = testx/10;
+		        	testy = testy/10;
+		        	
+		        }
+		        while(cc>0)
+		        {
+		        	drawCheckers(board[result[0]][result[1]],result[0],result[1],result[2]%10,result[3]%10);
+		        	result = CheckerMove.moveComputer(board, result, 1);
+		        	cc--;
+				
+		        }
                 if (loser == empty){
                     new PlaySound("sounds/comPlay.wav").start();
                     play();
@@ -469,7 +1338,23 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				loser = yellowNormal;
 			else
 			{
-                CheckerMove.moveComputer(board, result);
+				int testx = result[2];
+				int testy = result[3];
+				int cc = 1;
+		        while(testx>9||testy>9)
+		        {
+		        	cc++;
+		        	testx = testx/10;
+		        	testy = testy/10;
+		        	
+		        }
+		        while(cc>0)
+		        {
+		        	drawCheckers(board[result[0]][result[1]],result[0],result[1],result[2]%10,result[3]%10);
+		        	result = CheckerMove.moveComputer(board, result, 1);
+		        	cc--;
+				
+		        }
                 if (loser == empty){
                     new PlaySound("sounds/comPlay.wav").start();
                     play();
@@ -525,38 +1410,63 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				startX = square[0];
 				startY = square[1];
                 update(g);
+				
                 g=getGraphics();
                 g.setColor(new Color(255,100,30));
                 g.fillRect(50*square[0],50*square[1],50,50);                 
                 drawCheckers();
+                
                 new PlaySound("sounds/clickChecker.wav").start();
+                
             }
 		}
 		else if ( highlight  && (float)(square[0]+square[1]) / 2 != (square[0]+square[1]) / 2)
 		{
 			endX = square[0];
 			endY = square[1];
+			int sx = startX;
+			int sy = startY;
+			int ex = endX;
+			int ey = endY;
+			
+			
 			int status = CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+			
 			switch (status)
 			{
 			case CheckerMove.legalMove:
 				incomplete = false;
 				highlight = false;
+				drawCheckers(board[ex][ey],sx, sy, ex, ey);
+				new PlaySound("sounds/comPlay.wav").start();
+				update(g);
+				drawCheckers();
 				play();
-                update(g);
-                drawCheckers();
+				update(g);
+				
+				
+				
+				
+                
+                
                 break;
 			case CheckerMove.incompleteMove:
 				incomplete = true;
 				highlight = true;
+				drawCheckers(board[ex][ey],sx, sy, ex, ey);
+				new PlaySound("sounds/comPlay.wav").start();
 				// the ending square is now starting square for the next capture
 				startX = square[0];
 				startY = square[1];
-                update(g);
+				
+				update(g);
+				
                 g=getGraphics();
                 g.setColor(new Color(255,100,30));
                 g.fillRect(50*square[0],50*square[1],50,50);
                 drawCheckers();
+                
+                
                 break;
 			}
         }
