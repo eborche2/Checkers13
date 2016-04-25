@@ -212,7 +212,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     public void paintComponent(Graphics g)	{
 		super.paintComponent(g);
-        g.setColor(new Color(0,0,0));
+        g.setColor(new Color(255,255,255));
 
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
@@ -224,6 +224,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 g.fillRect(50+100*j,50+100*i,50,50);
             }
         }
+        g.setColor(new Color(0,0,0));;
+        for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                g.fillRect(100*j,50+100*i,50,50);
+            }
+        }
+        for(int i=0;i<4;i++){
+          for(int j=0;j<4;j++){
+                g.fillRect(50+100*j,100*i,50,50);
+            }
+        }
+        
         g.drawLine(0,400,400,400);
         g.drawLine(400, 0, 400, 400);
         drawCheckers();
@@ -401,6 +413,55 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         
        
     }
+    public void drawCheckers(int nox, int noy){                   //paint checkers on the board
+        g=getGraphics();
+
+         for(int i=0;i<8;i++){
+             for(int j=0;j<8;j++){
+                 if(i!=nox&&j!=noy){
+            	 if(board[i][j]==redNormal)
+                     g.drawImage(redN.getImage(),i*50,j*50,this);
+                 else if(board[i][j]==yellowNormal)
+                     g.drawImage(yellowN.getImage(),i*50,j*50,this);
+                 else if(board[i][j]==redKing)
+                     g.drawImage(redK.getImage(),i*50,j*50,this);
+                 else if(board[i][j]==yellowKing)
+                     g.drawImage(yellowK.getImage(),i*50,j*50,this);
+                 }
+             }
+         }
+    }
+    
+     public void animateChecker(int nox, int noy)
+     {
+    	 g.setColor(new Color(255,255,255));
+
+         for(int i=0;i<4;i++){
+             for(int j=0;j<4;j++){
+                 g.fillRect(100*j,100*i,50,50);
+             }
+         }
+         for(int i=0;i<4;i++){
+             for(int j=0;j<4;j++){
+                 g.fillRect(50+100*j,50+100*i,50,50);
+             }
+         }
+         g.setColor(new Color(0,0,0));;
+         for(int i=0;i<4;i++){
+             for(int j=0;j<4;j++){
+                 g.fillRect(100*j,50+100*i,50,50);
+             }
+         }
+         for(int i=0;i<4;i++){
+           for(int j=0;j<4;j++){
+                 g.fillRect(50+100*j,100*i,50,50);
+             }
+         }
+         
+         g.drawLine(0,400,400,400);
+         g.drawLine(400, 0, 400, 400);
+        drawCheckers(nox, noy);
+     }
     
     public void drawCheckers(int piece, int startx, int starty, int endx, int endy)
     {
@@ -420,10 +481,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty--;
-    			
+    				//animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
     				//this.repaint();
-
+    				
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
 
@@ -443,8 +504,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx--;
+    				////animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
     				//this.repaint();
+    				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -471,9 +534,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty++;
-    				
+    				//animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -494,9 +557,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx--;
-    				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				//animateChecker(endx/50,endy/50);
 
+    				g.drawImage(redN.getImage(), startx, starty,this);
+    				
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
 
@@ -525,9 +589,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty--;
-    				
+    				//animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -548,8 +612,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx++;
+    				//animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -576,9 +641,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty++;
-    				
+    				//animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -599,8 +664,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx++;
+    				//animateChecker(endx/50,endy/50);
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -632,10 +698,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				 starty--;
-        				 
-        				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				 //animateChecker(endx/50,endy/50);
 
+        				g.drawImage(yellowN.getImage(), startx, starty,this);
+        				
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
 
@@ -655,8 +721,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				 startx--;
+        				 //animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -682,9 +749,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			endx = endx*50;
         			while(starty!=endy)		{
         				starty++;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -704,8 +771,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(startx!=endx)		{
         				
         				startx--;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -735,9 +803,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -758,8 +826,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -786,9 +855,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -809,8 +878,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -842,8 +912,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				starty--;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -864,8 +935,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx--;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -892,10 +964,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				
-        				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				//animateChecker(endx/50,endy/50);
 
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
 
@@ -915,8 +987,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx--;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -946,10 +1019,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				
-        				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				//animateChecker(endx/50,endy/50);
 
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
 
@@ -969,9 +1042,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				//animateChecker(endx/50,endy/50);
 
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
 
@@ -997,10 +1071,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				
-        				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				//animateChecker(endx/50,endy/50);
 
+        				g.drawImage(redK.getImage(), startx, starty,this);
+        				
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
 
@@ -1020,8 +1094,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(redK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1052,9 +1127,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1075,8 +1150,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         			
         				startx--;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1103,9 +1179,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1126,8 +1202,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx--;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1157,9 +1234,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1180,8 +1257,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1208,9 +1286,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1231,8 +1309,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
+        				//animateChecker(endx/50,endy/50);
         				g.drawImage(yellowK.getImage(), startx, starty,this);
-        				//this.repaint();
+        				
 
         	            timeDiff = System.currentTimeMillis() - beforeTime;
         	            sleep = delay - timeDiff;
@@ -1415,6 +1494,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 g.setColor(new Color(255,100,30));
                 g.fillRect(50*square[0],50*square[1],50,50);                 
                 drawCheckers();
+                msg.setText("");
                 
                 new PlaySound("sounds/clickChecker.wav").start();
                 
@@ -1468,6 +1548,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 
                 
                 break;
+			case CheckerMove.illegalMove:
+				msg.setText("You've chosen an illegal move.");
 			}
         }
 	}
