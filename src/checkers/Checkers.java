@@ -413,55 +413,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         
        
     }
-    public void drawCheckers(int nox, int noy){                   //paint checkers on the board
-        g=getGraphics();
-
-         for(int i=0;i<8;i++){
-             for(int j=0;j<8;j++){
-                 if(i!=nox&&j!=noy){
-            	 if(board[i][j]==redNormal)
-                     g.drawImage(redN.getImage(),i*50,j*50,this);
-                 else if(board[i][j]==yellowNormal)
-                     g.drawImage(yellowN.getImage(),i*50,j*50,this);
-                 else if(board[i][j]==redKing)
-                     g.drawImage(redK.getImage(),i*50,j*50,this);
-                 else if(board[i][j]==yellowKing)
-                     g.drawImage(yellowK.getImage(),i*50,j*50,this);
-                 }
-             }
-         }
-    }
-    
-     public void animateChecker(int nox, int noy)
-     {
-    	 g.setColor(new Color(255,255,255));
-
-         for(int i=0;i<4;i++){
-             for(int j=0;j<4;j++){
-                 g.fillRect(100*j,100*i,50,50);
-             }
-         }
-         for(int i=0;i<4;i++){
-             for(int j=0;j<4;j++){
-                 g.fillRect(50+100*j,50+100*i,50,50);
-             }
-         }
-         g.setColor(new Color(0,0,0));;
-         for(int i=0;i<4;i++){
-             for(int j=0;j<4;j++){
-                 g.fillRect(100*j,50+100*i,50,50);
-             }
-         }
-         for(int i=0;i<4;i++){
-           for(int j=0;j<4;j++){
-                 g.fillRect(50+100*j,100*i,50,50);
-             }
-         }
-         
-         g.drawLine(0,400,400,400);
-         g.drawLine(400, 0, 400, 400);
-        drawCheckers(nox, noy);
-     }
+   
     
     public void drawCheckers(int piece, int startx, int starty, int endx, int endy)
     {
