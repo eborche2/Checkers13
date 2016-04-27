@@ -126,8 +126,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         nwB.setBounds(405,70,95,25);//297
         this.add(nwB);
         unB.setBounds(405,130,95,25);
-        unB.setVisible(false);
-        this.add(unB);
+        //unB.setVisible(false);
+        
         forfeit.setBounds(405,100,95,25);
         hlpB.setBounds(415,10,25,25);
         this.add(hlpB);
@@ -353,7 +353,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         selectedMode=p1.isSelected()?1:2;
         difficulty=level.getSelectedIndex();
 
-        unB.setVisible(true);
+        this.add(unB);
 
         won=0;
 
@@ -409,7 +409,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.remove(nwB);
         this.add(forfeit);
         this.revalidate();
-        
         update(getGraphics());
         drawCheckers();
         showStatus();
@@ -455,9 +454,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty--;
-    				//animateChecker(endx/50,endy/50);
+    				
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
     				
     	            timeDiff = System.currentTimeMillis() - beforeTime;
     	            sleep = delay - timeDiff;
@@ -478,9 +477,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx--;
-    				////animateChecker(endx/50,endy/50);
+    				//
     				g.drawImage(redN.getImage(), startx, starty,this);
-    				//this.repaint();
+    				
     				
 
     	            timeDiff = System.currentTimeMillis() - beforeTime;
@@ -508,7 +507,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty++;
-    				//animateChecker(endx/50,endy/50);
+    				
     				g.drawImage(redN.getImage(), startx, starty,this);
     				
 
@@ -531,7 +530,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx--;
-    				//animateChecker(endx/50,endy/50);
+    				
 
     				g.drawImage(redN.getImage(), startx, starty,this);
     				
@@ -563,7 +562,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty--;
-    				//animateChecker(endx/50,endy/50);
+    				
     				g.drawImage(redN.getImage(), startx, starty,this);
     				
 
@@ -586,7 +585,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx++;
-    				//animateChecker(endx/50,endy/50);
+    				
     				g.drawImage(redN.getImage(), startx, starty,this);
     				
 
@@ -615,7 +614,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			while(starty!=endy)
     			{
     				starty++;
-    				//animateChecker(endx/50,endy/50);
+    				
     				g.drawImage(redN.getImage(), startx, starty,this);
     				
 
@@ -638,7 +637,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     			{
     				
     				startx++;
-    				//animateChecker(endx/50,endy/50);
+    				
     				g.drawImage(redN.getImage(), startx, starty,this);
     				
 
@@ -672,7 +671,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				 starty--;
-        				 //animateChecker(endx/50,endy/50);
+        				 
 
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
@@ -695,7 +694,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				 startx--;
-        				 //animateChecker(endx/50,endy/50);
+        				 
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -723,7 +722,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			endx = endx*50;
         			while(starty!=endy)		{
         				starty++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -745,7 +744,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(startx!=endx)		{
         				
         				startx--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -777,7 +776,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -800,7 +799,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -829,7 +828,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -852,7 +851,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowN.getImage(), startx, starty,this);
         				
 
@@ -886,7 +885,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				starty--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
 
@@ -909,7 +908,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
 
@@ -938,7 +937,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				//animateChecker(endx/50,endy/50);
+        				
 
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
@@ -961,7 +960,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
 
@@ -993,7 +992,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				//animateChecker(endx/50,endy/50);
+        				
 
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
@@ -1016,7 +1015,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				//animateChecker(endx/50,endy/50);
+        				
 
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
@@ -1045,7 +1044,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				//animateChecker(endx/50,endy/50);
+        				
 
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
@@ -1068,7 +1067,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(redK.getImage(), startx, starty,this);
         				
 
@@ -1101,7 +1100,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1124,7 +1123,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         			
         				startx--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1153,7 +1152,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1176,7 +1175,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1208,7 +1207,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty--;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1231,7 +1230,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1260,7 +1259,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			while(starty!=endy)
         			{
         				starty++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1283,7 +1282,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         			{
         				
         				startx++;
-        				//animateChecker(endx/50,endy/50);
+        				
         				g.drawImage(yellowK.getImage(), startx, starty,this);
         				
 
@@ -1570,7 +1569,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.add(mode);
             this.add(nwB);
             this.remove(forfeit);
-            unB.setVisible(false);
+            this.remove(unB);
             this.revalidate();
             this.repaint();
             clearBoard();
@@ -1596,7 +1595,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.add(mode);
             this.add(nwB);
             this.remove(forfeit);
-            unB.setVisible(false);
+            this.remove(unB);
             this.revalidate();
             this.repaint();
             clearBoard();
