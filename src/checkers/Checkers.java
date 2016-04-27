@@ -126,6 +126,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         nwB.setBounds(405,70,95,25);//297
         this.add(nwB);
         unB.setBounds(405,130,95,25);
+        //unB.setEnabled(false);
+        unB.setVisible(false);
         this.add(unB);
         forfeit.setBounds(405,100,95,25);
         hlpB.setBounds(415,10,25,25);
@@ -181,24 +183,28 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         msg.setEnabled(false);
         this.add(msg);
 
+        //yellow normal and text
         rp.setBounds(10, 440, 50, 50);
         rp.setIcon(yellowN);
         this.add(rp);
         rpt.setBounds(60, 450, 90, 20);
         this.add(rpt);
 
+        //red normal and text
         bp.setBounds(190, 440, 50, 50);
         bp.setIcon(redN);
         this.add(bp);
         bpt.setBounds(240, 450, 120, 20);
         this.add(bpt);
 
+        //yellow king and text
         rk.setBounds(10, 490, 50, 50);
         rk.setIcon(yellowK);
         this.add(rk);
         rkt.setBounds(60, 500, 80, 20);
         this.add(rkt);
 
+        //red king and text
         bk.setBounds(190, 490, 50, 50);
         bk.setIcon(redK);
         this.add(bk);
@@ -291,6 +297,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
              this.add(p2);
              this.add(mode);
              this.add(nwB);
+             this.add(col);
              this.remove(forfeit);
              
              clearBoard();
@@ -332,10 +339,22 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         //Yellow is always at the bottom of the board
 
         selectedColor= c1.isSelected() ? "red" : "yellow";
+        if (selectedColor.equalsIgnoreCase("yellow")) {
+        	rp.setIcon(yellowN);
+        	bp.setIcon(redN);
+        	rk.setIcon(yellowK);
+        	bk.setIcon(redK);
+        } else {
+        	rp.setIcon(redN);
+        	bp.setIcon(yellowN);
+        	rk.setIcon(redK);
+        	bk.setIcon(yellowK);
+        }
+        
         selectedMode=p1.isSelected()?1:2;
         difficulty=level.getSelectedIndex();
 
-        unB.setEnabled(false);
+        unB.setVisible(true);
 
         won=0;
 
@@ -381,6 +400,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             play();
 		}
         this.remove(diff);
+        this.remove(col);
         this.remove(c1);;
         this.remove(c2);;
         this.remove(level);
@@ -390,8 +410,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.remove(nwB);
         this.add(forfeit);
         this.revalidate();
-        
-       
         
         update(getGraphics());
         drawCheckers();
@@ -1480,11 +1498,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				drawCheckers();
 				play();
 				update(g);
-				
-				
-				
-				
-                
                 
                 break;
 			case CheckerMove.incompleteMove:
@@ -1558,6 +1571,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.add(mode);
             this.add(nwB);
             this.remove(forfeit);
+            unB.setVisible(false);
             this.revalidate();
             this.repaint();
             clearBoard();
@@ -1583,6 +1597,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.add(mode);
             this.add(nwB);
             this.remove(forfeit);
+            unB.setVisible(false);
             this.revalidate();
             this.repaint();
             clearBoard();
