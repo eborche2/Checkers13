@@ -12,10 +12,10 @@ public class CheckerFrame extends JFrame implements ActionListener{
     CheckerFrame(){
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            SwingUtilities.updateComponentTreeUI(this); //changing the appearence of the frame
+            SwingUtilities.updateComponentTreeUI(this); //changing the appearance of the frame
         }
         catch (Exception e) {
-           //no need to handle exception as it only affect the appearence
+           //no need to handle exception as it only affect the appearance
         }
         setupGUI();
         new PlaySound("sounds/Start.wav").start();
@@ -27,10 +27,10 @@ public class CheckerFrame extends JFrame implements ActionListener{
         //gmP.imageUpdate(ne, WIDTH, WIDTH, WIDTH, WIDTH, WIDTH)
         add(gmP);
         stB.setHorizontalAlignment(SwingConstants.LEADING);
-        stB.setIcon(new ImageIcon(getClass().getResource("/checkersIcon.jpg")));
         stB.setBackground(Color.LIGHT_GRAY);
         stB.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        stB.setBounds(154,420,200,60);
+        //stB.setBounds(154,420,150,60);
+        stB.setBounds(190,420,150,60);
         stB.setFont(new Font("Times new roman",Font.BOLD,20));
         stB.addActionListener(this);
         stB.setFocusPainted(false);
