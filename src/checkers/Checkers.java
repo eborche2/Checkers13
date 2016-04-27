@@ -182,27 +182,27 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.add(msg);
 
         rp.setBounds(10, 440, 50, 50);
-        rp.setIcon(redN);
+        rp.setIcon(yellowN);
         this.add(rp);
-        rpt.setBounds(60, 450, 60, 20);
+        rpt.setBounds(60, 450, 90, 20);
         this.add(rpt);
 
-        bp.setBounds(110, 440, 50, 50);
-        bp.setIcon(yellowN);
+        bp.setBounds(190, 440, 50, 50);
+        bp.setIcon(redN);
         this.add(bp);
-        bpt.setBounds(160, 450, 90, 20);
+        bpt.setBounds(240, 450, 120, 20);
         this.add(bpt);
 
-        rk.setBounds(250, 440, 50, 50);
-        rk.setIcon(redK);
+        rk.setBounds(10, 490, 50, 50);
+        rk.setIcon(yellowK);
         this.add(rk);
-        rkt.setBounds(305, 450, 60, 20);
+        rkt.setBounds(60, 500, 80, 20);
         this.add(rkt);
 
-        bk.setBounds(365, 440, 50, 50);
-        bk.setIcon(yellowK);
+        bk.setBounds(190, 490, 50, 50);
+        bk.setIcon(redK);
         this.add(bk);
-        bkt.setBounds(420, 450, 100, 20);
+        bkt.setBounds(240, 500, 120, 20);
         this.add(bkt);
 
         //g=getGraphics();
@@ -1553,6 +1553,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.remove(forfeit);
             this.revalidate();
             this.repaint();
+            newGame();
         }
         else if (loser == yellowNormal && won==0){
             msg.setText("Red Wins!");
@@ -1574,7 +1575,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.add(nwB);
             this.remove(forfeit);
             this.revalidate();
-            this.repaint();            
+            this.repaint();       
+            
+            newGame();
         }
     }
    // The AWT invokes the update() method in response to the repaint() method
