@@ -278,9 +278,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("sounds/button.wav").start();
-            
-            
-           
             newGame();
         }
         if(e.getActionCommand().equalsIgnoreCase("Forfeit")){
@@ -295,12 +292,13 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
              this.add(mode);
              this.add(nwB);
              this.remove(forfeit);
+             
+             clearBoard();
              this.revalidate();
              this.repaint();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
             new PlaySound("sounds/button.wav").start();
-           
             undo();
         }
         if(e.getSource()==hlpB){
@@ -318,6 +316,13 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 silent=true;
             }
         }
+    }
+    
+    private void clearBoard() {
+    	for (int i=0; i<8; i++) {
+ 			for (int j=0; j<8; j++)
+ 				board[i][j] = empty;
+         }
     }
 
     public void newGame()	{                            //creates a new game
@@ -1524,18 +1529,20 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     public void mouseExited(MouseEvent e) {
     }
 
-    private void showStatus() {       //prints msgs to the statuss bar
-        if (this.toMove == redNormal){
+    private void showStatus() {       //prints msgs to the status bar
+        if (this.toMove == redNormal || this.toMove == redKing){
             msg.setText("Red to move");
-        }
-        else{
+        } else{
             msg.setText("Yellow to move");
         }
+        
+        update(g);
 
         if (loser == redNormal && won==0){
             msg.setText("Yellow Wins!");
+            update(g);
             try {
-                Thread.sleep(150);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -1553,12 +1560,14 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.remove(forfeit);
             this.revalidate();
             this.repaint();
-            newGame();
+            clearBoard();
+            update(g);
         }
         else if (loser == yellowNormal && won==0){
             msg.setText("Red Wins!");
+            update(g);
             try {
-                Thread.sleep(150);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }            
@@ -1575,9 +1584,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.add(nwB);
             this.remove(forfeit);
             this.revalidate();
-            this.repaint();       
-            
-            newGame();
+            this.repaint();
+            clearBoard();
+            update(g);
         }
     }
    // The AWT invokes the update() method in response to the repaint() method
