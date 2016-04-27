@@ -1,4 +1,4 @@
-Checkers is a board game of skill played between two players who, following a fixed set of rules, attempt to win the game by either removing all of their opponent’s playing pieces from the draughts board, or by rendering their opponent’s pieces immobile. 
+Checkers is a board game of skill played between two players who, following a fixed set of rules, attempt to win the game by either removing all of their opponent's playing pieces from the draughts board, or by rendering their opponent's pieces immobile. 
 
 ORDER OF PLAY
 1.1 To start the first game the players decide by random selection (i) which color they will play.  
@@ -35,3 +35,10 @@ Definition of a Win
 * Forfeits the game.
 
 
+
+Button Definition
+Undo Button: This will undo the last move made on all levels except for the hardest difficulty. 
+Resign Button: Will resign the game and give the other player the win. 
+Difficulty: This may be selected at the beginning of the game in a one player game. 
+Color: You may select the color of your piece in a 1-player game. In a two player game, once the game starts, whoever chooses yellow will go first. 
+New Game: This button will relaunch a new game with chosen options after the end of each game. 
