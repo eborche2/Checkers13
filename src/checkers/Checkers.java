@@ -243,6 +243,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         
         g.drawLine(0,400,400,400);
         g.drawLine(400, 0, 400, 400);
+        g.drawLine(0,0, 400, 0);
+        g.drawLine(0, 0, 0, 400);
         drawCheckers();
         
     }
@@ -422,13 +424,13 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         for(int i=0;i<8;i++){
             for(int j=0;j<8;j++){
                 if(board[i][j]==redNormal)
-                    g.drawImage(redN.getImage(),i*50,j*50,this);
+                    g.drawImage(redN.getImage(),5+i*50,5+j*50,this);
                 else if(board[i][j]==yellowNormal)
-                    g.drawImage(yellowN.getImage(),i*50,j*50,this);
+                    g.drawImage(yellowN.getImage(),5+i*50,5+j*50,this);
                 else if(board[i][j]==redKing)
-                    g.drawImage(redK.getImage(),i*50,j*50,this);
+                    g.drawImage(redK.getImage(),5+i*50,5+j*50,this);
                 else if(board[i][j]==yellowKing)
-                    g.drawImage(yellowK.getImage(),i*50,j*50,this);
+                    g.drawImage(yellowK.getImage(),5+i*50,5+j*50,this);
             }
         }
         
