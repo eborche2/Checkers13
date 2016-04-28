@@ -447,61 +447,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     	{
     	if(startx>endx)
     	{
-    		if(starty>endy)
-    		{
-    			starty = starty*50;
-    			endy = endy*50;
-    			startx = startx*50;
-    			endx = endx*50;
-    			while(starty!=endy)
-    			{
-    				starty--;
-    				
-    				g.drawImage(redN.getImage(), startx, starty,this);
-    				
-    				
-    	            timeDiff = System.currentTimeMillis() - beforeTime;
-    	            sleep = delay - timeDiff;
-
-    	            if (sleep < 0) {
-    	                sleep = 2;
-    	            }
-
-    	            try {
-    	                Thread.sleep(sleep);
-    	            } catch (InterruptedException e) {
-    	                System.out.println("Interrupted: " + e.getMessage());
-    	            }
-
-    	            beforeTime = System.currentTimeMillis();
-    			}
-    			while(startx!=endx)
-    			{
-    				
-    				startx--;
-    				//
-    				g.drawImage(redN.getImage(), startx, starty,this);
-    				
-    				
-
-    	            timeDiff = System.currentTimeMillis() - beforeTime;
-    	            sleep = delay - timeDiff;
-
-    	            if (sleep < 0) {
-    	                sleep = 2;
-    	            }
-
-    	            try {
-    	                Thread.sleep(sleep);
-    	            } catch (InterruptedException e) {
-    	                System.out.println("Interrupted: " + e.getMessage());
-    	            }
-
-    	            beforeTime = System.currentTimeMillis();
-    			}
-    		}
-    		else
-    		{
+    		
     			starty = starty*50;
     			endy = endy*50;
     			startx = startx*50;
@@ -551,64 +497,11 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     	            beforeTime = System.currentTimeMillis();
     			}
-    		}
+    		
     	}
     	else
     	{
-    		if(starty>endy)
-    		{
-    			starty = starty*50;
-    			endy = endy*50;
-    			startx = startx*50;
-    			endx = endx*50;
-    			while(starty!=endy)
-    			{
-    				starty--;
-    				
-    				g.drawImage(redN.getImage(), startx, starty,this);
-    				
-
-    	            timeDiff = System.currentTimeMillis() - beforeTime;
-    	            sleep = delay - timeDiff;
-
-    	            if (sleep < 0) {
-    	                sleep = 2;
-    	            }
-
-    	            try {
-    	                Thread.sleep(sleep);
-    	            } catch (InterruptedException e) {
-    	                System.out.println("Interrupted: " + e.getMessage());
-    	            }
-
-    	            beforeTime = System.currentTimeMillis();
-    			}
-    			while(startx!=endx)
-    			{
-    				
-    				startx++;
-    				
-    				g.drawImage(redN.getImage(), startx, starty,this);
-    				
-
-    	            timeDiff = System.currentTimeMillis() - beforeTime;
-    	            sleep = delay - timeDiff;
-
-    	            if (sleep < 0) {
-    	                sleep = 2;
-    	            }
-
-    	            try {
-    	                Thread.sleep(sleep);
-    	            } catch (InterruptedException e) {
-    	                System.out.println("Interrupted: " + e.getMessage());
-    	            }
-
-    	            beforeTime = System.currentTimeMillis();
-    			}
-    		}
-    		else
-    		{
+    		
     			starty = starty*50;
     			endy = endy*50;
     			startx = startx*50;
@@ -658,14 +551,13 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     	            beforeTime = System.currentTimeMillis();
     			}
-    		}
+    		
     		}
     	}
     	else if (piece==yellowNormal)
     		if(startx>endx)
         	{
-        		if(starty>endy)
-        		{
+        		
         			starty = starty*50;
         			endy = endy*50;
         			startx = startx*50;
@@ -715,62 +607,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         	            beforeTime = System.currentTimeMillis();
         			}
-        		}
-        		else
-        		{
-        			starty = starty*50;
-        			endy = endy*50;
-        			startx = startx*50;
-        			endx = endx*50;
-        			while(starty!=endy)		{
-        				starty++;
-        				
-        				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				
-
-        	            timeDiff = System.currentTimeMillis() - beforeTime;
-        	            sleep = delay - timeDiff;
-
-        	            if (sleep < 0) {
-        	                sleep = 2;
-        	            }
-
-        	            try {
-        	                Thread.sleep(sleep);
-        	            } catch (InterruptedException e) {
-        	                System.out.println("Interrupted: " + e.getMessage());
-        	            }
-
-        	            beforeTime = System.currentTimeMillis();
-        			}
-        			while(startx!=endx)		{
-        				
-        				startx--;
-        				
-        				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				
-
-        	            timeDiff = System.currentTimeMillis() - beforeTime;
-        	            sleep = delay - timeDiff;
-
-        	            if (sleep < 0) {
-        	                sleep = 2;
-        	            }
-
-        	            try {
-        	                Thread.sleep(sleep);
-        	            } catch (InterruptedException e) {
-        	                System.out.println("Interrupted: " + e.getMessage());
-        	            }
-
-        	            beforeTime = System.currentTimeMillis();
-        			}
-        		}
+        		
+        		
         	}
         	else
         	{
-        		if(starty>endy)
-        		{
+        		
         			starty = starty*50;
         			endy = endy*50;
         			startx = startx*50;
@@ -820,59 +662,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         	            beforeTime = System.currentTimeMillis();
         			}
-        		}
-        		else
-        		{
-        			starty = starty*50;
-        			endy = endy*50;
-        			startx = startx*50;
-        			endx = endx*50;
-        			while(starty!=endy)
-        			{
-        				starty++;
-        				
-        				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				
-
-        	            timeDiff = System.currentTimeMillis() - beforeTime;
-        	            sleep = delay - timeDiff;
-
-        	            if (sleep < 0) {
-        	                sleep = 2;
-        	            }
-
-        	            try {
-        	                Thread.sleep(sleep);
-        	            } catch (InterruptedException e) {
-        	                System.out.println("Interrupted: " + e.getMessage());
-        	            }
-
-        	            beforeTime = System.currentTimeMillis();
-        			}
-        			while(startx!=endx)
-        			{
-        				
-        				startx++;
-        				
-        				g.drawImage(yellowN.getImage(), startx, starty,this);
-        				
-
-        	            timeDiff = System.currentTimeMillis() - beforeTime;
-        	            sleep = delay - timeDiff;
-
-        	            if (sleep < 0) {
-        	                sleep = 2;
-        	            }
-
-        	            try {
-        	                Thread.sleep(sleep);
-        	            } catch (InterruptedException e) {
-        	                System.out.println("Interrupted: " + e.getMessage());
-        	            }
-
-        	            beforeTime = System.currentTimeMillis();
-        			}
-        		}
+        		
+        		
         		}
     	else if (piece==redKing)
     		if(startx>endx)
