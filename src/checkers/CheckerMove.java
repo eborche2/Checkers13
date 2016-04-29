@@ -410,7 +410,8 @@ public class CheckerMove {
 
 
 //given a board, generates all the possible moves depending on whose turn
-    static Vector  generateMoves(int[][] board, int turn) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	static Vector  generateMoves(int[][] board, int turn) {
      Vector moves_list = new Vector();
      int move;
 
@@ -511,7 +512,8 @@ public class CheckerMove {
 //for an initial capture represented by move, sees if there are more captures
 //until there is none.  If there are multiple capture configurations,
 //add all of them to moves_list
-    private static void forceCaptures(int[][] board, int[] move, Vector moves_list,int inc){
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	private static void forceCaptures(int[][] board, int[] move, Vector moves_list,int inc){
      int newx = move[2], newy = move[3];
 
      while (newx>7 || newy>7){

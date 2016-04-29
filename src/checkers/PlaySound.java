@@ -59,6 +59,7 @@ public class PlaySound extends Thread {
 		}
 
 		if (auline.isControlSupported(FloatControl.Type.PAN)) {
+			@SuppressWarnings("unused")
 			FloatControl pan = (FloatControl) auline
 					.getControl(FloatControl.Type.PAN);
 		}

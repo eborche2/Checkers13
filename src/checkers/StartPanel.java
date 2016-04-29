@@ -3,6 +3,7 @@ package checkers;
 import javax.swing.*;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class StartPanel extends JPanel{
     
     StartPanel(){
@@ -29,14 +30,19 @@ public class StartPanel extends JPanel{
         //////////////////////////////////////////////////////////////////////
         g.setFont(new Font("Times new roman",Font.BOLD,12));
         g.setColor(Color.BLACK);
-        g.drawString("A.M.H.H. ABEYKOON",180,180);
-        g.drawString("070002V",320,180);
-        g.drawString("B.P.P. FERNANDO",180,200);
-        g.drawString("070123R",320,200);
-        g.drawString("C.S.N.J. FERNANDO",180,220);
-        g.drawString("070125B",320,220);
-        g.drawString("K.C.B. GAJASINGHE",180,240);
-        g.drawString("070137M",320,240);
+       // g.drawString("A.M.H.H. ABEYKOON",180,180);
+       // g.drawString("070002V",320,180);
+       // g.drawString("B.P.P. FERNANDO",180,200);
+       // g.drawString("070123R",320,200);
+       // g.drawString("C.S.N.J. FERNANDO",180,220);
+       // g.drawString("070125B",320,220);
+       // g.drawString("K.C.B. GAJASINGHE",180,240);
+       // g.drawString("070137M",320,240);
+        g.drawString("SER 216", 180, 180);
+        g.drawString("TEAM 13", 240, 180);
+        g.drawString("WILLIAM WEN", 180, 220);
+        g.drawString("ENOS FRANCESCHINI", 180, 240);
+        g.drawString("EVAN BORCHERT", 180, 260);
         ////////////////////////////////////////////////////////////////////////
         g.drawImage(new ImageIcon(getClass().getResource("/checkersIcon.jpg")).getImage(),350,280,this);//checkersIcon.jpg
 

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.io.*;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class Help extends JDialog {
     JScrollPane hlp=new JScrollPane();
     JTextArea txt=new JTextArea();

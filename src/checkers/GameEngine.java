@@ -80,7 +80,8 @@ Weight of checkers
           return MinMax(board,depth,maxDepth,move,toMove,counter,inf,-inf);
       }
 
-      static int MinMax(int[][] board, int depth, int maxDepth,int[] move, int turn, int[] counter, int redBest, int yellowBest)
+      @SuppressWarnings("rawtypes")
+	static int MinMax(int[][] board, int depth, int maxDepth,int[] move, int turn, int[] counter, int redBest, int yellowBest)
       {
         int score,bestScore;
         int[][] newBoard;

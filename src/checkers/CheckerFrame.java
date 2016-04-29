@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class CheckerFrame extends JFrame implements ActionListener{
     JButton stB=new JButton("Start Game");
     JPanel gmP=new StartPanel();

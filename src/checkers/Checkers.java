@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class Checkers extends JPanel implements ActionListener, ItemListener, MouseMotionListener, MouseListener {
 
     Graphics g;
@@ -45,7 +46,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     JLabel bkt=new JLabel("Opponent's King");
     JLabel bk=new JLabel();
 
-    JComboBox level=new JComboBox();
+    @SuppressWarnings("rawtypes")
+	JComboBox level=new JComboBox();
 
     String selectedColor;
     int selectedMode;
@@ -88,7 +90,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         setupGUI();
     }
 
-    private void setupGUI(){
+    @SuppressWarnings("unchecked")
+	private void setupGUI(){
         setLayout(null);
 
         nwB.setFocusPainted(false);
@@ -214,7 +217,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         //g.drawImage(redN.getImage(),30,450,this);
 
     }
-
+/** 
+ * This modification to the paintComponent method ensures the chessboard is rewritten with white 
+ * and black squares. 
+ */
     public void paintComponent(Graphics g)	{
 		super.paintComponent(g);
         g.setColor(new Color(255,255,255));
@@ -248,7 +254,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         drawCheckers();
         
     }
-
+/**
+ * Action listener for the various buttons on the GUI. 
+ */
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("1-Player")){
             new PlaySound("sounds/option.wav").start();
@@ -332,7 +340,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
  				board[i][j] = empty;
          }
     }
-
+/**
+ * This method sets up the options and board for a new game. 
+ */
     public void newGame()	{                            //creates a new game
 
         //Yellow takes the first move in both modes
@@ -417,7 +427,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
       
         
     }
-
+/**
+ * This method draws the pieces on the board in the location where they're located in the board array.
+ */
     public void drawCheckers(){                   //paint checkers on the board
        g=getGraphics();
 
@@ -436,7 +448,15 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         
        
     }
-   
+   /** 
+    * This method animates the movement of the pieces on the chess board to slow down the movement of the computer 
+    * pieces and show what's happening. It also animates the player pieces for consistencty.
+    * @param piece Type of piece which needs to be moved. 
+    * @param startx Starting location of the piece to move. 
+    * @param starty Starting location of the piece to move. 
+    * @param endx Ending location of the piece to move. 
+    * @param endy Ending location of the piece to move. 
+    */
     
     public void drawCheckers(int piece, int startx, int starty, int endx, int endy)
     {
@@ -1098,7 +1118,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         		}
     	
     }
-    
+    /*
+     * This method will undo the last move made. 
+     */
     public void undo(){            //undo function
         undoCount=1;
         for(int i=0;i<8;i++){
@@ -1112,8 +1134,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             play();
         }
     }
-
-    public void play()	{
+/*
+ * This method controls the gameplay of the board. Depending on the next moves and indicates when the end 
+ * of the game has come. 
+ */
+    @SuppressWarnings("unused")
+	public void play()	{
 
         undoCount++;
 
@@ -1225,14 +1251,19 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         showStatus();
 	}
-
+/*
+ * Figures out if the move is possible. 
+ */
     private boolean isPossibleSquare(int i, int j) {
 		return (i+j)%2 == 1;
     }
 
     public void itemStateChanged(ItemEvent e) {          
     }
-
+/*
+ * Captures the click of the mouse on the board and what piece has been selected. 
+ * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
+ */
     public void mousePressed(MouseEvent e) {
 
         int x=e.getX();
@@ -1332,7 +1363,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     public void mouseExited(MouseEvent e) {
     }
-
+/*
+ * Updates the status of the screen providing the messages to the GUI. 
+ */
     private void showStatus() {       //prints msgs to the status bar
         if (this.toMove == redNormal || this.toMove == redKing){
             msg.setText("Red to move");
