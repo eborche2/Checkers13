@@ -2,6 +2,7 @@ package checkers;
 
 import javax.swing.*;
 import java.io.*;
+import java.net.*;
 import java.awt.*;
 
 @SuppressWarnings("serial")
@@ -35,18 +36,24 @@ public class Help extends JDialog {
 
     private void addText() {
         String str;
-        InputStream is = null; 
-        InputStreamReader isr = null;
+        //InputStream is = null; 
+        //InputStreamReader isr = null;
         BufferedReader b = null;
 
-        try{
+        
            // open input stream test.txt for reading purpose.
-           is = new FileInputStream("HowToPlay.txt");
+           //is = new FileInputStream(getClass().getResource("/HowToPlay.txt"));
            // create new input stream reader
-           isr = new InputStreamReader(is);
+        	URL url = getClass().getResource("/HowToPlay.txt");
+           try {
+			b = new BufferedReader( new InputStreamReader(url.openStream()));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
            
            // create new buffered reader
-           b = new BufferedReader(isr);
+          
      
            
             try {
@@ -55,8 +62,6 @@ public class Help extends JDialog {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+       
     }
 }

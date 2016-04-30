@@ -259,7 +259,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
  */
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("1-Player")){
-            new PlaySound("sounds/option.wav").start();
+            new PlaySound("/option.wav").start();
             col.setEnabled(true);
             col.setVisible(true);
             diff.setEnabled(true);
@@ -272,7 +272,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             level.setVisible(true);
         }
         if(e.getActionCommand().equalsIgnoreCase("2-Player")){
-            new PlaySound("sounds/option.wav").start();
+            new PlaySound("/option.wav").start();
             col.setEnabled(false);
             col.setVisible(false);
             diff.setEnabled(false);
@@ -286,13 +286,13 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setSelected(true);
         }
         if(e.getActionCommand().equalsIgnoreCase("red")){
-            new PlaySound("sounds/option.wav").start();
+            new PlaySound("/option.wav").start();
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
-            new PlaySound("sounds/option.wav").start();
+            new PlaySound("/option.wav").start();
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
-            new PlaySound("sounds/button.wav").start();
+            new PlaySound("/button.wav").start();
             newGame();
         }
         if(e.getActionCommand().equalsIgnoreCase("Forfeit")){
@@ -314,18 +314,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
              this.repaint();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
-            new PlaySound("sounds/button.wav").start();
+            new PlaySound("/button.wav").start();
             undo();
         }
         if(e.getSource()==hlpB){
-            new PlaySound("sounds/button.wav").start();
+            new PlaySound("/button.wav").start();
             hp.setVisible(true);
         }
         if(e.getSource()==snB){
             if(silent){
                 snB.setIcon(snp);
                 silent=false;
-                new PlaySound("sounds/button.wav").start();
+                new PlaySound("/button.wav").start();
             }
             else{
                 snB.setIcon(mup);
@@ -1192,7 +1192,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				
 		        }
                 if (loser == empty){
-                    new PlaySound("sounds/comPlay.wav").start();
+                    new PlaySound("/comPlay.wav").start();
                     play();
                 }
                 this.toMove = yellowNormal;
@@ -1227,7 +1227,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				
 		        }
                 if (loser == empty){
-                    new PlaySound("sounds/comPlay.wav").start();
+                    new PlaySound("/comPlay.wav").start();
                     play();
                 }
 
@@ -1293,7 +1293,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 drawCheckers();
                 msg.setText("");
                 
-                new PlaySound("sounds/clickChecker.wav").start();
+                new PlaySound("/clickChecker.wav").start();
                 
             }
 		}
@@ -1315,7 +1315,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				incomplete = false;
 				highlight = false;
 				drawCheckers(board[ex][ey],sx, sy, ex, ey);
-				new PlaySound("sounds/comPlay.wav").start();
+				new PlaySound("/comPlay.wav").start();
 				update(g);
 				drawCheckers();
 				play();
@@ -1326,7 +1326,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				incomplete = true;
 				highlight = true;
 				drawCheckers(board[ex][ey],sx, sy, ex, ey);
-				new PlaySound("sounds/comPlay.wav").start();
+				new PlaySound("/comPlay.wav").start();
 				// the ending square is now starting square for the next capture
 				startX = square[0];
 				startY = square[1];
